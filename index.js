@@ -5,12 +5,26 @@ class Cliente {
 
 class ContaCorrente {
 	agencia;
-	saldo;
+	// #saldo para private field
+	_saldo = 0;
 
 	sacar(valor) {
-		if(this.saldo >= valor) {
-			this.saldo -= valor;
-		} else console.log("Valor acima do saldo!")
+		if(this._saldo >= valor) {
+			this._saldo -= valor;
+			return valor;
+		} else {
+			console.log("Valor acima do saldo!")
+			return 0;
+		}
+	}
+
+	depositar(valor) {
+		if(valor < 0) {
+			console.log("Valor negativo não é permitido!")
+			return;
+		}
+		
+		this._saldo += valor;
 	}
 }
 
@@ -28,12 +42,10 @@ cliente2.cpf = 88822233309;
 // cliente2.saldo = 0;
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo = 0;
+contaCorrenteRicardo.depositar(100);
 contaCorrenteRicardo.agencia = 1001;
-console.log(contaCorrenteRicardo.saldo);
-contaCorrenteRicardo.saldo = 100;
-contaCorrenteRicardo.sacar(50);
-console.log(contaCorrenteRicardo.saldo);
-
-console.log(cliente1);
-console.log(cliente2);
+console.log(contaCorrenteRicardo);
+contaCorrenteRicardo.depositar(200);
+const valorSacado = contaCorrenteRicardo.sacar(50);
+console.log(valorSacado);
+console.log(contaCorrenteRicardo);
