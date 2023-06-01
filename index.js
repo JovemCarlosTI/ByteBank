@@ -1,34 +1,7 @@
-class Cliente {
-	nome;
-	cpf;
-}
+import {Cliente} from './Cliente.js'
+import {ContaCorrente} from './ContaCorrente.js'
 
-class ContaCorrente {
-	agencia;
-	// #saldo para private field
-	_saldo = 0;
-
-	sacar(valor) {
-		if(this._saldo >= valor) {
-			this._saldo -= valor;
-			return valor;
-		} else {
-			console.log("Valor acima do saldo!")
-			return 0;
-		}
-	}
-
-	depositar(valor) {
-		if(valor < 0) {
-			console.log("Valor negativo não é permitido!")
-			return;
-		}
-		
-		this._saldo += valor;
-	}
-}
-
-const cliente1 = new Cliente();
+const cliente1 = new Cliente()
 cliente1.nome = "Ricardo";
 cliente1.cpf = 11122233309;
 // cliente1.agencia = 1001;
