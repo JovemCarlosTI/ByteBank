@@ -12,8 +12,8 @@ cliente1.rg = 123456789;
 const cliente2 = new Cliente();
 cliente2.nome = "Alice";
 cliente2.cpf = 88822233309;
-// cliente2.agencia = 1001;
-// cliente2.saldo = 0;
+cliente2.agencia = 1001;
+cliente2.saldo = 0;
 
 const contaCorrenteRicardo = new ContaCorrente();
 contaCorrenteRicardo.depositar(500);
@@ -21,7 +21,9 @@ contaCorrenteRicardo.agencia = 1001;
 contaCorrenteRicardo.cliente = cliente1;
 
 const conta2 = new ContaCorrente()
-conta2.cliente = cliente2
+conta2.cliente = cliente2;
+// conta2.cliente.nome = "Alice";
+// conta2.cliente.cpf = 88822233309;
 conta2.agencia = 102
 
 contaCorrenteRicardo.transferir(200, conta2);
