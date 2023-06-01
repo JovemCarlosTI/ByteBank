@@ -6,6 +6,11 @@ export class ContaCorrente {
 	// #saldo para private field
 	_saldo = 0;
 
+	constructor(cliente, agencia) {
+		this.agencia = agencia;
+		this.cliente = cliente;
+	}
+	
 	set cliente(arg) {
 		if (arg instanceof Cliente) this._cliente = arg;
 	}
@@ -18,6 +23,7 @@ export class ContaCorrente {
 		return this._saldo;
 	}
 
+	
 	sacar(valor) {
 		if(this._saldo >= valor) {
 			this._saldo -= valor;
