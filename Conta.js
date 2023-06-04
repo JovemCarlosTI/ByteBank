@@ -22,9 +22,9 @@ export class Conta {
 		return this._saldo;
 	}
 
+	// Método abstrato
 	sacar(valor) {
-		let taxa = 1;
-		return this._sacar(valor, taxa);
+		throw new Error("O método sacar() da conta é abstrato!");	
 	}
 
 	_sacar(valor, taxa) {
